@@ -1,5 +1,7 @@
 package homeWork;
 
+import java.sql.SQLOutput;
+
 public class HW2 {
 
     public static void main(String[] args) {
@@ -107,6 +109,7 @@ public class HW2 {
         Short bs = 12300;
         int z = Short.compare(as, bs);
         System.out.println(z);
+        System.out.println("Hi");
 
     }
 }
