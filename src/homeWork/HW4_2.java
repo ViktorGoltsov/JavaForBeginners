@@ -15,6 +15,22 @@ public class HW4_2 {
         System.out.println("Результат деления " + name1 + " на " + name2 + " = " + i / j + ", а остаток от деления  = " + i % j );
     }
 
+    public static String forApplePo (Integer apple) {
+        String endApple;
+        if (apple == 11) {
+            endApple = "яблок";
+        } else if ((" " + apple).endsWith("1")) {
+            endApple = "яблоку";
+        } else if (apple > 11 && apple < 15) {
+            endApple = "яблок";
+        } else if (apple % 10 > 1 && apple % 10 < 5) {
+            endApple = "яблока";
+        } else {
+            endApple = "яблок";
+        }
+        return endApple;
+    }
+
     public static String forApple (Integer apple) {
         String endApple;
         if (apple == 11) {
@@ -39,11 +55,11 @@ public class HW4_2 {
             endStudent = "студента";
         } else if (student > 11 && student < 15) {
             endStudent = "студентов";
-        } else if (student % 10 > 1 && student % 10 < 5) {
-            endStudent = "студента";
-        } else {
+        } else if ((student > 1) && (student < 5)) {
             endStudent = "студентов";
-        }
+        } else if ((student % 10 > 1) && (student % 10 < 5)) {
+            endStudent = "студента";
+        } else endStudent = "студентов";
         return endStudent;
     }
 
@@ -52,7 +68,7 @@ public class HW4_2 {
         String endStudent;
 
         System.out.println("Если " + apple + " " + forApple(apple) + " поделить на " + student + " "
-                + forStudent(student) + ", то каждый ученик получит по " + apple/student + " " + forApple(apple/student)
+                + forStudent(student) + ", то каждый ученик получит по " + apple/student + " " + forApplePo(apple/student)
                 + ", и " + apple % student + " " + forApple(apple % student) + " останется учителю.");
     }
 
