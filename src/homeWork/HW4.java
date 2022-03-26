@@ -12,6 +12,40 @@ public class HW4 {
         i++;
     }
 
+    public static void testToExpRez (Integer nInit, Integer expectedResult){
+        int n = nInit;
+        if (n % 2 == 0) {
+            n = n * 2;
+        } else {
+            n= n * n;
+        }
+
+        if (expectedResult == n) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
+        }
+    }
+
+    public static void testTo20Task(int Age, String expRez) {
+        String resolution = "---";
+        if (Age >= 18) {
+        resolution = "В школу можно идти. Машину можно водить. Голосовать можно.";
+        } else if (Age >= 16) {
+        resolution = "В школу можно идти. Машину можно водить.";
+        } else if (Age >= 5) {
+        resolution = "В школу можно идти.";
+        }
+        System.out.println("\nTest with " + Age + " years\nActual rezult = " + resolution + "\nExpected result = " + expRez);
+
+        if (expRez == resolution) {
+        System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
+        } else {
+        System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
+        }
+}
+
+
     public static void main(String[] args) {
 
         task();
@@ -167,11 +201,13 @@ public class HW4 {
 
         task();
         //Part 2
+        //10
         //Проверьте число на четность. Если число четное, удвойте это число, иначе возведите число в квадрат.
         //Выведите результат работы алгоритма на печать.
         //Найдите в презентации, какой блок схеме соответствует ваш алгоритм.
 
-        int n = 6;
+
+        int n = 5;
         if (n % 2 == 0) {
             n = n * 2;
         } else {
@@ -179,6 +215,13 @@ public class HW4 {
         }
         System.out.println(n);
 
+        //test from task 19
+
+        testToExpRez(2,4);
+        testToExpRez(5,25);
+        testToExpRez(0,0);
+
+        //11
         task();
         //Напишите алгоритм проверки возраста на соответствие условиям (if-else):
         //Голосовать можно с 18 лет
@@ -188,17 +231,26 @@ public class HW4 {
         //
         //Найдите в презентации, какой блок схеме соответствует ваш алгоритм.
 
-        age = 18;
-
+        age = 17;
+        String resolution = "---";
         if (age >= 18) {
-            System.out.println("Голосовать можно");
-        } if (age >= 16) {
-            System.out.println("Машину можно водить");
-        } if (age >= 5) {
-            System.out.println("В школу можно идти");
+            resolution = "В школу можно идти. Машину можно водить. Голосовать можно.";
+        } else if (age >= 16) {
+            resolution = "В школу можно идти. Машину можно водить.";
+        } else if (age >= 5) {
+            resolution = "В школу можно идти.";
         }
+            System.out.println(resolution);
 
+        //test from task 20
+        testTo20Task (19, "В школу можно идти. Машину можно водить. Голосовать можно.");
+        testTo20Task (17, "В школу можно идти. Машину можно водить.");
+        testTo20Task (15, "В школу можно идти.");
+        testTo20Task (4, "---");
+
+        //12
         task();
+
         //Напишите алгоритм программы, которая проверяет оценку ученика и выполняет следующие действия:
         //5 - выдать похвальную грамоту и перевести в следующий класс
         //4 - перевести в следующий класс
@@ -240,11 +292,6 @@ public class HW4 {
         } else {
             System.out.println("ошибка о невозможности произвести действия");
         }
-
-
-
-
-
 
     }
 }
