@@ -22,11 +22,11 @@ public class Lesson5 {
         return ((double)a + b + c) / 3;
     }
 
-    public static double returnAbs (double number) {
-        if (number < 0) {
-            number = (-1) * number;
+    public static double returnAbs (double number1) {
+        if (number1 < 0) {
+            number1 = (-1) * number1;
         }
-        return number;
+        return number1;
     }
 
     public static double countDifferenceBetweenMinAndAvg (int a, int b, int c) {
