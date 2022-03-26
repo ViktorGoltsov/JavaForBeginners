@@ -31,11 +31,12 @@ public class Lesson5 {
 
     public static double countDifferenceBetweenMinAndAvg (int a, int b, int c) {
 
-        int min = returnMinOfThree(a,b,c);
-        double average = returnAvg(a,b,c);
-    return returnAbs(min -average);
-
+    int min = returnMinOfThree(a,b,c);
+    double average = returnAvg(a,b,c);
+    return returnAbs(min - average);
+    // или вот так: return returnAbs (returnMinOfThree(a,b,c) - returnAvg(a,b,c));
     }
+
     public static String displayMessage (int a, int b, int c) {
         String message;
 
