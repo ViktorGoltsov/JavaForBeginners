@@ -70,6 +70,7 @@ public class Lesson6 {
             } else {
                 System.out.println(i + bottles + wall + commaSpace + i + bottles + dot);
                 System.out.println(take + commaSpace + (i - 1) + bottles + wall + dot + ln);
+
             }
         }
     }
