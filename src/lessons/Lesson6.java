@@ -56,6 +56,7 @@ public class Lesson6 {
         String noMore = "no more";
         String ln = "\n";
 
+
         //Печатаем все числа от 5 до 1 включительно
         for (int i = 99; i > -1; i--) {
             if (i == 2) {
