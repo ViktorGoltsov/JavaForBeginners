@@ -199,9 +199,43 @@ public class HW3 {
         double d1 = Double.valueOf(str1) - Double.valueOf(str2);
         System.out.println(d1);
         System.out.println(Double.valueOf(str1) - Double.valueOf(str2));
-
         line();
 
+        task(20);
+        Float temp = 37.3F;
+        Float avg = temp/2;
+        temp = 35.6F;
+        Float avgItog = avg + temp/2;
+        System.out.println(Math.round(avgItog));
+        line();
+
+        task(21);
+        Number n = Double.MAX_VALUE;
+        n = 10;
+        n = 10.999999999;
+
+        System.out.println("n = " + Double.MAX_VALUE + "\n" + "n = " + n.intValue() + "\n" + "n = " + n
+                + " потому что Абстрактный класс (родительский класс) Number является суперклассом классов платформы, представляющих " + "\n"
+                + "числовые значения, которые могут быть преобразованы в примитивные типы byte, double, float, int, long"
+                        + "\n" + "и short.");
+        line();
+
+        task(21);
+        Integer numberInteger = 100;
+        System.out.println(numberInteger.toString() + 10 + " = numberInteger.toString() + 10");
+        System.out.println(numberInteger + 10 + " = numberInteger + 10");
+        System.out.println("numberInteger instanceof Integer - " + (numberInteger instanceof Integer));
+        System.out.println("numberInteger.toString() instanceof String - " + (numberInteger.toString() instanceof String));
+        line();
+
+        task(22);
+        float tC = 36.6F;
+        System.out.println(tC + " градусов по Цельсию  = " + ((tC * 9/5) + 32) + " градусов по Фаренгейту");
+
+        float Mkg = 50.0F;
+        float Mlb = 50.0F;
+        System.out.println(Mkg + " kilogram = " + (Mkg * 2.205) + " lbs, "+ Mlb + " lb = " + Math.round(Mlb / 2.205)
+                + " kg");
 
     }
 
