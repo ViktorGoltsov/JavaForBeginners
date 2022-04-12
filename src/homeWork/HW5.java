@@ -112,6 +112,7 @@ public class HW5 {
         System.out.println(dayOfWeek(5));
         verifyEquals("thursday", dayOfWeek(4));
 
+
         //1.3.
         task();
         int x = 5;
