@@ -147,13 +147,36 @@ public class HW5 {
         return price * mass;
     }
 
+    //1.9. Написать метод, который принимает на вход необходимые параметры, и печатает чек.
+    public static void check (String product, double price, double massa) {
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("|   Product   |     Price         |      amount      |       Total       |");
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("|   " + product + "     |   " + numToString(price) + "  |   " + numToStringKgGr(massa) + "  |   " + numToString(price * massa) + " |");
+        System.out.println("--------------------------------------------------------------------------");
+    }
+
+    public static void check (String product, double price, int amount) {
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("|   Product   |     Price         |      amount      |       Total       |");
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("|   " + product + "     |   " + numToString(price) + "  |     " + amount + " items      |   " + numToString(price * amount) + " |");
+        System.out.println("--------------------------------------------------------------------------");
+    }
+
+    //1.10. Написать метод, который принимает на вход количество часов работы в день и стоимость одного часа работы,
+    // и возвращает заработную плату в месяц.
+    public static String salary(int hoursPerDay, int hourlyRate) {
+
+        return ("Salary - " + hoursPerDay * hourlyRate * 22 + " $ per month");
+    }
+
     public static void main(String[] args) {
 
         //1.2.
         task();
         System.out.println(dayOfWeek(5));
         verifyEquals("thursday", dayOfWeek(4));
-
 
         //1.3.
         task();
@@ -200,6 +223,30 @@ public class HW5 {
         verifyEquals(15.75, sumPurchase(10.5, 1.5));
         verifyEquals(0, sumPurchase(0, 0));
         verifyEquals(0.25, sumPurchase(0.5, 0.5));
+
+        //1.9. Написать метод, который принимает на вход необходимые параметры, и печатает чек.
+        //Например: Яблоки
+        //Цена за 1 кг			50 руб 13 коп
+        //Количество товара	         3 кг 400 гр
+        //_______________________________________
+        //Сумма к оплате		170 руб 44 коп
+        //
+        //или
+        //
+        //Хлеб
+        //Цена за 1 шт		30 руб 50 коп
+        //Количество товара	5 шт
+        //_______________________________________
+        //Сумма к оплате		152 руб 50 коп
+        task();
+        check("Apple", 50.13, 3.4);
+        check("Bread", 30.50, 5);
+
+        //1.10.
+        task();
+        System.out.println(salary(8, 35));
+
+
     }
 
 
