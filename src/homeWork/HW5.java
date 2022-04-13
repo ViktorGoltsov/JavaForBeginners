@@ -126,6 +126,27 @@ public class HW5 {
         return avg;
     }
 
+    // 1.6. Написать метод, который принимает на вход десятичное число (например, 10.75), и возвращает строку “10 руб 75 коп”.
+    public static String numToString (double decimalNumber) {
+    int beforeDot = (int)decimalNumber;
+    int afterDot = (int)((decimalNumber * 100) % 100);
+        return ("" + beforeDot + " руб." + afterDot + " коп.");
+    }
+
+    // 1.7. Написать метод, который принимает на вход десятичное число и возвращает строку “10 кг 75 гр”.
+    public static String numToStringKgGr (double decimalNumber) {
+        int beforeDot = (int)decimalNumber;
+        int afterDot = (int)((decimalNumber * 1000) % 1000);
+        return ("" + beforeDot + " кг. " + afterDot + " гр.");
+    }
+
+    // 1.8 Написать метод, который принимает на вход 2 параметра -  цену и количество товара (может быть вес товара,
+    // или количество в штуках). Алгоритм возвращает сумму покупки в виде десятичного числа.
+    public static double sumPurchase(double price, double mass) {
+
+        return price * mass;
+    }
+
     public static void main(String[] args) {
 
         //1.2.
@@ -158,6 +179,27 @@ public class HW5 {
         verifyEquals("37.24", String.valueOf(tempOfCat(t1, t2, t3, t4, t5)));
         verifyEquals("Температура за пределами диапазона", String.valueOf(tempOfCat(50, t2, t3, t4, t5)));
 
+        //1.6. Написать метод, который принимает на вход десятичное число (например, 10.75), и возвращает строку “10 руб 75 коп”.
+        task();
+        double decimalNumber = 10.75;
+        System.out.println(numToString(decimalNumber));
+        verifyEquals("10 руб.75 коп.", numToString(decimalNumber));
+
+        // 1.7. Написать метод, который принимает на вход десятичное число и возвращает строку “10 кг 75 гр”
+        task();
+        double decimalNumber2 = 10.075;
+        System.out.println(numToStringKgGr(decimalNumber2));
+        verifyEquals("10 кг. 75 гр.", numToStringKgGr(decimalNumber2));
+        verifyEquals("0 кг. 0 гр.", numToStringKgGr(0));
+        verifyEquals("99 кг. 999 гр.", numToStringKgGr(99.999));
+
+        // 1.8 Написать метод, который принимает на вход 2 параметра -  цену и количество товара (может быть вес товара,
+        // или количество в штуках). Алгоритм возвращает сумму покупки в виде десятичного числа.
+        task();
+        System.out.println(sumPurchase(10.5, 1.5));
+        verifyEquals(15.75, sumPurchase(10.5, 1.5));
+        verifyEquals(0, sumPurchase(0, 0));
+        verifyEquals(0.25, sumPurchase(0.5, 0.5));
     }
 
 
