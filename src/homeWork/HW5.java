@@ -107,8 +107,6 @@ public class HW5 {
             smallest = c;
         }
         return smallest;
-
-
     }
 
     //1.5. Написать алгоритм вычисления среднего значения из 5 показателей температуры тела кота.
@@ -169,6 +167,33 @@ public class HW5 {
     public static String salary(int hoursPerDay, int hourlyRate) {
 
         return ("Salary - " + hoursPerDay * hourlyRate * 22 + " $ per month");
+    }
+
+    //1.11. Написать метод, который принимает на вход необходимые параметры и печатает строку ведомости выдачи зарплаты сотрудникам.
+    public static String vedomost (String surname, String name, String middleName, double salary) {
+
+        return (surname + " " + name + " " +  middleName + "        " + numToString(salary));
+    }
+
+    //1.12.
+    public static String xIsWhat (int x) {
+        if (x < 0) {
+            return "x is negactive";
+        } else if (x > 0) {
+            return "x is positive";
+        } else {
+            return "x is zero";
+        }
+    }
+
+    //1.13. Написать метод, который принимает на вход год рождения и возвращает ваше счастливое число. Счастливое
+    // число рассчитывается по формуле: сумма всех чисел, если результат больше 9, снова считается сумма всех чисел.
+    public static int happyNum(int yearOfBirth) {
+        String str = String.valueOf(yearOfBirth);
+        char firstNum = str.charAt(1);
+        char secondNum = str.charAt(2);
+        char thirdNum = str.charAt(3);
+        char fourthNum = str.charAt(4);
     }
 
     public static void main(String[] args) {
@@ -246,6 +271,21 @@ public class HW5 {
         task();
         System.out.println(salary(8, 35));
 
+        //1.11 Написать метод, который принимает на вход необходимые параметры и печатает строку ведомости выдачи зарплаты сотрудникам.
+
+        task();
+        System.out.println("Vedomost  March 2022");
+        System.out.println(vedomost("Smirnova", "Maria", "Ivanovna", 70000.00));
+        System.out.println(vedomost("Serebriakov", "Ivan", "Petrovich", 128059.00));
+
+        //1.12 Записать в виде метода:
+        task();
+        System.out.println(xIsWhat(5));
+        System.out.println(xIsWhat(-5));
+        System.out.println(xIsWhat(0));
+
+        //1.13. Написать метод, который принимает на вход год рождения и возвращает ваше счастливое число. Счастливое
+        // число рассчитывается по формуле: сумма всех чисел, если результат больше 9, снова считается сумма всех чисел.
 
     }
 
