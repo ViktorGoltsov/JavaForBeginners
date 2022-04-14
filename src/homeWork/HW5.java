@@ -186,15 +186,82 @@ public class HW5 {
         }
     }
 
-    //1.13. Написать метод, который принимает на вход год рождения и возвращает ваше счастливое число. Счастливое
+    //2.13. Написать метод, который принимает на вход год рождения и возвращает ваше счастливое число. Счастливое
     // число рассчитывается по формуле: сумма всех чисел, если результат больше 9, снова считается сумма всех чисел.
     public static int happyNum(int yearOfBirth) {
-        String str = String.valueOf(yearOfBirth);
-        char firstNum = str.charAt(1);
-        char secondNum = str.charAt(2);
-        char thirdNum = str.charAt(3);
-        char fourthNum = str.charAt(4);
+        int happyN;
+        int firstNum = (yearOfBirth - yearOfBirth % 1000) / 1000;
+        int secondNum = (yearOfBirth % 1000 - yearOfBirth % 100) / 100;
+        int thirdNum = (yearOfBirth % 100 - yearOfBirth % 10) / 10;
+        int fourthNum = yearOfBirth % 10;
+
+//        альтернативный способ перевести многозначное число в строку, а затем каждый симмол в int
+//        String str = String.valueOf(yearOfBirth);
+//        int fi = Character.getNumericValue(str.charAt(0));
+//        int se = Character.getNumericValue(str.charAt(1));
+//        int thi = Character.getNumericValue(str.charAt(2));
+//        int fo = Character.getNumericValue(str.charAt(3));
+
+        int sum = firstNum + secondNum + thirdNum + fourthNum;
+        if ((sum) > 9) {
+            sum = sum / 10 + sum % 10;
+            if (sum > 9) {
+                sum = sum / 10 + sum % 10;
+                if (sum > 9) {
+                    sum = sum / 10 + sum % 10;
+                } else {
+                    happyN = sum;
+                }
+            } else {
+                happyN = sum;
+            }
+        } else {
+            happyN = sum;
+        }
+        return sum;
     }
+
+//   2.14 а) Дано 3 числа. Необходимо рассчитать разницу между средним значением и медианой (median) значением.
+//    Если разница больше 2, необходимо показать сообщение: “Среднее значение … отличается от медианы … на … “.
+//    Иначе показать сообщение: “Среднее значение =  …, медиана =  … ”.
+////
+    public static String medAndAvg(int a, int b, int c) {
+        int med = 0;
+        if ((a >= b && a <= c)||(a >= c && a <= b)) {
+            med = a;
+        } if ((c >= b && c <= a)||(c >= a && c <= b)) {
+            med = c;
+        } if ((b >= a && b <= c)||(b >= c && b <= a)) {
+            med = b;
+        }
+
+        int avg = (a + b + c) / 3;
+        int delta;
+        if (avg > med) {
+            delta = avg - med;
+        } else {
+            delta = med - avg;
+        }
+
+        int max = Math.max(Math.max(a,b), c);  //b расчет медианы через методы класса Math
+        int min = Math.min(Math.min(a,b), c);
+        int med2 = a + b + c -max - min;
+
+        if (delta > 2) {
+            return ("Cреднее значение " + avg + " отличается от медианы " + med + "(" + med2 + ") на " + delta);
+        } else {
+            return ("Среднее значение = " + avg + ", медиана = " + med + "(" + med2 + ")");
+        }
+
+        //b) Посчитать все то же самое с помощью методов класса Math, где возможно их использовать
+    }
+
+    //Написать метод, который использует методы класса Math, принимает на вход сумму к оплате (например, 10.75)
+    // и округляет сумму в пользу покупателя. Метод возвращает новую сумму к оплате в виде строки, например “10 руб 00 коп”.
+
+
+
+
 
     public static void main(String[] args) {
 
@@ -286,6 +353,24 @@ public class HW5 {
 
         //1.13. Написать метод, который принимает на вход год рождения и возвращает ваше счастливое число. Счастливое
         // число рассчитывается по формуле: сумма всех чисел, если результат больше 9, снова считается сумма всех чисел.
+        task();
+        System.out.println(happyNum(9876));
+        System.out.println(happyNum(1000));
+        System.out.println(happyNum(2022));
+        verifyEquals(6, happyNum(2022));
+        verifyEquals(1, happyNum(1000));
+        verifyEquals(3, happyNum(9876));
+        verifyEquals(7, happyNum(1987));
+
+        //1.14
+        task();
+        System.out.println(medAndAvg(1,3,30));
+        verifyEquals("Cреднее значение 11 отличается от медианы 3(3) на 8", medAndAvg(1,3,30));
+        System.out.println(medAndAvg(1,1,1));
+        verifyEquals("Среднее значение = 1, медиана = 1(1)", medAndAvg(1,1,1));
+
+        //1.15
+        task();
 
     }
 
