@@ -263,7 +263,21 @@ public class HW5 {
        return (numToString(newSum));
     }
 
+    public static double sixteen (int a, int b, int c) {
+        double rez = Math.sqrt((a * b + c) * Math.pow(a, b))/Math.PI;
+        return Math.round(rez);
+    }
 
+    //1.17
+    public static void seventeen(int x, int y) {
+    //1
+        if (y > 0) {
+        x = 1;
+    }
+        System.out.println("" + x + ", " + y);
+    //2
+
+    }
 
 
     public static void main(String[] args) {
@@ -375,6 +389,19 @@ public class HW5 {
         //1.15
         task();
         System.out.println(roundToCustomer(999.75));
+        verifyEquals("999 руб.0 коп.", roundToCustomer(999.75));
+
+        //1.16
+        task();
+        int a = 3;
+        int b = 4;
+        int c = 20;
+        System.out.println(sixteen(a,b,c));
+
+        //1.17
+        task();
+
+
     }
 
 
