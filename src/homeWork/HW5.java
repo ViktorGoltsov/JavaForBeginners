@@ -268,15 +268,60 @@ public class HW5 {
         return Math.round(rez);
     }
 
-    //1.17
-    public static void seventeen(int x, int y) {
-    //1
+    //1.17.1
+    public static int seventeen(int x, int y) {
         if (y > 0) {
         x = 1;
     }
-        System.out.println("" + x + ", " + y);
-    //2
+       return x;
 
+    }
+    //1.17.2
+    public static double score (double score) {
+
+        if ((score > 80)&& (score < 90)) {
+        score += 5;
+        }
+        return score;
+    }
+
+    //1.17.3
+    //rewrite !((i<10)||(v>=50)) without !
+    //применяем закон Моргана: отрицание коньюнкции - есть дизьюнкция отрицаний, отрицание дизьюнкции есть коньюнкция отрицаний
+    //!((i<10)||(v>=50)) = !(i<10)&&!(v>=50) = (i>=10) && (v<50)
+    public static String morgan (int i, int v) {
+        if ((i>=10) && (v<50)) {
+            return "(i>=10) && (v<50) = true";
+        } else {
+            return "(i>=10) && (v<50) = false";
+        }
+    }
+
+    //1.17.4
+    public static String oddNum (int x) {
+        if ((x % 2 != 0) && (x >= 0)) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
+
+    //1.17.5
+    public static String positivNum (int x, int y) {
+        if ((y >= 0) && (x >= 0)) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
+
+    //1.17.6
+    public static String sameSignNum (int x, int y) {
+        if ((x * y) > 0) {
+            return "true";
+        } else {
+            return "false";
+        }
     }
 
 
@@ -398,10 +443,69 @@ public class HW5 {
         int c = 20;
         System.out.println(sixteen(a,b,c));
 
-        //1.17
+        //1.17.1
         task();
+        System.out.println(seventeen(-5,2));
+        System.out.println(seventeen(-5,1));
+        System.out.println(seventeen(0,0));
+        System.out.println(seventeen(10,-1));
 
+        verifyEquals(1, seventeen(-5,2));
+        verifyEquals(1, seventeen(-5,1));
+        verifyEquals(0, seventeen(0,0));
+        verifyEquals(10, seventeen(10,-1));
+        System.out.println();
 
+        //1.17.2
+
+        System.out.println(score(81));
+        System.out.println(score(89));
+        System.out.println(score(80));
+        System.out.println(score(90));
+        System.out.println(score(100));
+        System.out.println(score(75));
+
+        verifyEquals(86, score(81));
+        verifyEquals(94, score(89));
+        verifyEquals(80, score(80));
+        verifyEquals(90, score(90));
+        verifyEquals(100, score(100));
+        verifyEquals(75, score(75));
+        System.out.println();
+        //1.17.3
+
+        System.out.println(morgan(10,49));
+        System.out.println(morgan(9,50));
+        System.out.println(morgan(10,50));
+        System.out.println(morgan(9,49));
+        verifyEquals("(i>=10) && (v<50) = true", morgan(10,49));
+        verifyEquals("(i>=10) && (v<50) = false", morgan(9,50));
+        verifyEquals("(i>=10) && (v<50) = false", morgan(10,50));
+        verifyEquals("(i>=10) && (v<50) = false", morgan(9,49));
+        System.out.println();
+        //1.17.4
+
+        System.out.println(oddNum(5));
+        verifyEquals("true", oddNum(5));
+        verifyEquals("false", oddNum(6));
+        System.out.println();
+        //1.17.5
+
+        System.out.println(positivNum(5, 15));
+        verifyEquals("true", positivNum(1,1));
+        verifyEquals("false", positivNum(-1,1));
+        verifyEquals("false", positivNum(1,-1));
+        System.out.println();
+        //1.17.6
+
+        System.out.println(sameSignNum(-5, -3));
+        System.out.println(sameSignNum(5, 3));
+        System.out.println(sameSignNum(-5, 3));
+        System.out.println(sameSignNum(5, -3));
+        verifyEquals("true", sameSignNum(-5,-3));
+        verifyEquals("true", sameSignNum(5,3));
+        verifyEquals("false", sameSignNum(-5,3));
+        verifyEquals("false", sameSignNum(5,-3));
     }
 
 
