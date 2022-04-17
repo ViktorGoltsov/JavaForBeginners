@@ -1,4 +1,4 @@
-package lessons;
+package lessons.lessons1to7;
 
 public class Lesson6 {
 

@@ -324,6 +324,33 @@ public class HW5 {
         }
     }
 
+//    1.18 Написать метод, который с помощью методов класса Math высчитывает любую степень сгенерированного случайного числа.
+//    Метод возвращает математически округленное целое значение и выводит на экран:
+//            “Число … в степени … = …”
+//
+//    Число может быть в пределах от 0 до 1 исключительно.
+//    Степень числа может быть от 0 до 10 включительно
+
+    public static void powOfRandom () {
+
+        long pow = Math.round(Math.random()*10);
+        double num = Math.random();
+        double powOfRan = Math.pow(num,pow);
+        int raundPowOfRan = (int)(powOfRan);
+        System.out.println("Число " + num +  " в степени " + pow + " = " + raundPowOfRan);
+
+    }
+
+    //1/19 Написать метод, который возвращает случайное число в пределах от 1 до 99 включительно.
+    public static int random1100 () {
+        double rand0 = Math.random();
+        int rand = (int)(rand0*100);
+        if (rand == 0) {
+            rand = 1;
+        }
+        return rand;
+    }
+
 
     public static void main(String[] args) {
 
@@ -506,6 +533,18 @@ public class HW5 {
         verifyEquals("true", sameSignNum(5,3));
         verifyEquals("false", sameSignNum(-5,3));
         verifyEquals("false", sameSignNum(5,-3));
+
+        //1.18
+        task();
+        powOfRandom();
+
+        //1.19
+        task();
+        System.out.println(random1100());
+
+        //1.20
+        task();
+
     }
 
 

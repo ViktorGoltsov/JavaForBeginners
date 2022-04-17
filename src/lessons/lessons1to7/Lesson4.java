@@ -1,4 +1,4 @@
-package lessons;
+package lessons.lessons1to7;
 
 public class Lesson4 {
 
@@ -11,6 +11,9 @@ public class Lesson4 {
     }
 
     public static void main(String[] args) {
+
+
+
 
         task(100);
         double n = 3.0;
