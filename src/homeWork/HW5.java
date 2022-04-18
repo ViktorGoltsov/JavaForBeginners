@@ -36,6 +36,14 @@ public class HW5 {
         }
     }
 
+    public static void verifyEquals(boolean expectedResult, boolean actualResult) {
+        if (expectedResult == actualResult) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
+        }
+    }
+
     //1.2. Написать метод, который принимает на вход число от 1 до 7  и возвращает день недели.
 
     public static String dayOfWeek(int dayNum) {
@@ -360,6 +368,22 @@ public class HW5 {
         }
     }
 
+    public static boolean isleapYear2 (int year) {
+        if (year%4 == 0) {
+            if (year%100 == 0) {
+                if (year%400 == 0) {
+                    return true; //4
+                } else {
+                    return false;//5
+                }
+            } else {
+                return true; //4
+            }
+        } else {
+            return false; //5
+        }
+    }
+
 
 //    Чтобы определить, является ли год високосным, выполните следующие действия:
 //
@@ -561,7 +585,12 @@ public class HW5 {
 
         //1.20
         task();
-        System.out.println(isleapYear(2022));
+        System.out.println(isleapYear(2016));
+
+        System.out.println(isleapYear2(2064));
+        verifyEquals(true, isleapYear2(2064));
+        System.out.println(isleapYear2(2021));
+        verifyEquals(false, isleapYear2(2021));
     }
 
 
