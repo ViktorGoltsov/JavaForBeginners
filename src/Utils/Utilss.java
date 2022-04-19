@@ -10,10 +10,13 @@ public class Utilss {
         System.out.println("____________________  __");
     }
 
-    public static void task (int number) {
-        line();
-        System.out.println(number);
-        ln();
+
+    public static int i = 1;
+    public static void task() {
+        System.out.println("_____________________________________________________");
+        System.out.println("                      Task " + i);
+        System.out.println("-----------------------------------------------------");
+        i++;
     }
 
     public static String verify(double a, double b) {
