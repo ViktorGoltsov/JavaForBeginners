@@ -147,6 +147,21 @@ public class HW6 {
         }
     }
 
+    //15 Распечатать последовательность чисел:
+    //0, 3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24, 25
+
+    public static void sequence15 () {
+        for (int i = 0; i <= 25; i++) {
+            if (i == 0) {
+                System.out.println(i);
+            } else if (i % 3 == 0) {
+                System.out.println(i);
+            } else if (i % 5 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+
     //16 Написать метод, который принимает параметры n, m, , и печатает последовательность нечетных чисел начиная
     // с числа n, с шагом m,  длина последовательности l.
 
@@ -185,7 +200,7 @@ public class HW6 {
     // (десятки) и второй цифрой (единицы) не превышает 3.
     public static void sequence19 () {
         for (int i = 10; i < 100; i++) {
-            if (((int)(i / 10) - (int)(i % 10)) <= 3) {
+            if (Math.abs((int)(i / 10) - (int)(i % 10)) <= 3) {
                 System.out.println(i);
             }
         }
@@ -263,7 +278,7 @@ public class HW6 {
 
         //15
         task();
-
+        sequence15();
         //16
         task();
         sequence16(6,3, 4);
