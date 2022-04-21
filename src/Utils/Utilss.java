@@ -19,32 +19,42 @@ public class Utilss {
         i++;
     }
 
-    public static String verify(double a, double b) {
-        if (a==b) {
-            System.out.println("Pass");
-
-            return "Pass";
+    public static void verifyEquals(String expectedResult, String actualResult) {
+        if (expectedResult.equalsIgnoreCase(actualResult)) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
         } else {
-            System.out.println("Fail");
-
-            return "Fail";
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
         }
     }
 
-    public static String verify(String str1, String str2) {
-        if (str1.equals(str2)) {
-            System.out.println("Pass");
-
-            return "Pass";
+    public static void verifyEquals(int expectedResult, int actualResult) {
+        if (expectedResult == actualResult) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
         } else {
-            System.out.println("Fail");
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
+        }
+    }
 
-            return "Fail";
+    public static void verifyEquals(double expectedResult, double actualResult) {
+        if (expectedResult == actualResult) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
+        }
+    }
+
+    public static void verifyEquals(boolean expectedResult, boolean actualResult) {
+        if (expectedResult == actualResult) {
+            System.out.println("\u001B[32m" + "pass" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "fail " + "\u001B[0m");
         }
     }
 
     public void printA () {
         System.out.println("A");
     }
+
+
 
 }

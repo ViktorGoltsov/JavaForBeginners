@@ -81,8 +81,8 @@ public class Lesson8 {
         Utilss utl = new Utilss(); //не статик переменную можно вызвать в другом классе только от нового объекта класса
         utl.printA();
 
-        verify(cat1, cat2); //метод запускается без указания класса, так как мы импортировали все методы класса вверху
-        verify(intReg, intObject); //в метоже сравниваются через ==, а подаем Integer, но Джава понимает,
+        verifyEquals(cat1, cat2); //метод запускается без указания класса, так как мы импортировали все методы класса вверху
+        verifyEquals(intReg, intObject); //в метоже сравниваются через ==, а подаем Integer, но Джава понимает,
         // что так как мы подаем Интеджер, то сама сравнивает через Иквалс
         System.out.println(intReg ==intObject);
         System.out.println(intReg.equals(intObject));
