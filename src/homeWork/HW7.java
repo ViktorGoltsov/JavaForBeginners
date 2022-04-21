@@ -202,7 +202,44 @@ public class HW7 {
         verifyEquals(6, Math.round(avgOfArr(new int[]{5, 5, 8})));
         verifyEquals(5, Math.round(avgOfArr(new int[]{2, 4, 6, 8})));
 
+        //19 массив нечетных отрицательных чисел от -1000 до - 900
+        task();
+        int arrbegin = -1000;
+        int arrend = -900;
+        int amount = 0;
+        for (int k = arrbegin; k <= arrend; k++) {
+            if (k % 2 != 0) {
+                amount = amount + 1;
+            }
+        }
+        int[] arr2 = new int[amount];
+        int t = 0;
+        for (int i = arrbegin; i <= arrend; i++) {
+            if (i % 2 != 0) {
+                arr2[t] = i;
+                t++;
+            }
+        }
 
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.println(arr2[i]);
+        }
+
+        //20. Массив из 10 случайных положительных целых чисел
+        task();
+int d;
+        int[] arr4 = new int[10];
+        for (int i = 0 ; i < arr4.length;) {
+                d= (int)(Math.random()*Short.MAX_VALUE);
+                if (d != 0) {
+                    arr4 [i] = d;
+                    i++;
+                }
+        }
+
+        for (int i = 0; i < arr4.length; i++) {
+            System.out.println(arr4[i]);
+        }
 
     }
 }
