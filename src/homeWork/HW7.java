@@ -200,12 +200,12 @@ public class HW7 {
         task();
         int arrLenght = 5;  //длина массива
         int n = 0; // счетчик элементов массива
-        int j; //элемент массива
+        int r; //элемент массива
         int[] arr = new int[arrLenght];
         for (int i = 0 ; n < arrLenght; i++) {
-            j = (int)(Math.random()*10);
-            if (j % 2 == 0) {
-                arr [n] = j;
+            r = (int)(Math.random()*10);
+            if (r % 2 == 0) {
+                arr [n] = r;
                 n = n + 1;
             }
         }
@@ -327,8 +327,8 @@ public class HW7 {
         task();
         int [][] arr24 = new int [4][8];
         for (int i = 0; i < arr24.length; i++) {
-            for (int jjj = 0; jjj < arr24[i].length; jjj++) {
-                arr24[i][jjj] = (int)Math.ceil(Math.random()*10);
+            for (int j = 0; j < arr24[i].length; j++) {
+                arr24[i][j] = (int)Math.ceil(Math.random()*10);
             }
         }
 
@@ -340,7 +340,7 @@ public class HW7 {
         task();
         int sum = 0;
         for (int i = 0; i < arr24.length; i++) {
-            for (j = 0; j < arr24[i].length; j++) {
+            for (int j = 0; j < arr24[i].length; j++) {
                 if (arr24[i][j] % 2 == 0) {
                     sum += arr24[i][j];
                 }
