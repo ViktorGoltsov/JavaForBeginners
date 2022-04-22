@@ -1,5 +1,7 @@
 package homeWork;
 
+import java.util.Arrays;
+
 import static Utils.Utilss.task;
 import static Utils.Utilss.verifyEquals;
 
@@ -261,11 +263,12 @@ public class HW7 {
 
         //21 Создать метод, который принимает на вход массив int,  и возвращает минимальное значение, максимальное
         // значение и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
+        task();
         System.out.println(arrParam(arr4));
 
 
         //22 Создать массив четных чисел и массив нечетных чисел из элементов массива из задания 20
-
+        task();
         int jj = 0;
         int kk = 0;
 
@@ -299,7 +302,53 @@ public class HW7 {
             System.out.println(arrEven[i]);
         }
 
-        // Создать двумерный массив, который состоит из имен, возрастов и цветов котов
+        //23 Создать двумерный массив, который состоит из имен, возрастов и цветов котов
+        task();
+        String[][] arr2dCats = new String[catAges.length][3];
+        for (int i = 0; i < catAges.length; i++) {
+            for (int m = 0; m < arr2dCats[i].length; m++) {
+                if (m == 0) {
+                    arr2dCats[i][0] = catsNames[i];
+                } if (m == 1) {
+                    arr2dCats[i][1] = String.valueOf(catAges[i]);
+                } if (m == 2) {
+                    arr2dCats[i][2] = catColors[i];
+                }
+            }
+        }
+        for (int i = 0; i < arr2dCats.length; i++) {
+            if (i % 2 == 0) {
+                //System.out.println(Arrays.deepToString(arr2dCats[i])); - распечатывает весь многомерный массив
+                System.out.println(Arrays.toString(arr2dCats[i]));  // - распечатывает в строку одномерный массив
+            }
+        }
+
+        //24 Создать двумерный массив целых случайных чисел от 1 до 10 размерности 4*8.
+        task();
+        int [][] arr24 = new int [4][8];
+        for (int i = 0; i < arr24.length; i++) {
+            for (int jjj = 0; jjj < arr24[i].length; jjj++) {
+                arr24[i][jjj] = (int)Math.ceil(Math.random()*10);
+            }
+        }
+
+        for (int i = 0; i < arr24.length; i++) {
+            System.out.println(Arrays.toString(arr24[i]));
+        }
+
+        //25 Вывести сумму всех четных чисел массива из задания 24.
+        task();
+        int sum = 0;
+        for (int i = 0; i < arr24.length; i++) {
+            for (j = 0; j < arr24[i].length; j++) {
+                if (arr24[i][j] % 2 == 0) {
+                    sum += arr24[i][j];
+                }
+            }
+        }
+        System.out.println(sum);
+
+
 
 
 
