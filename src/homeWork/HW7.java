@@ -15,6 +15,24 @@ public class HW7 {
         return avg;
     }
 
+    //21 Создать метод, который принимает на вход массив int,  и возвращает минимальное значение, максимальное значение
+    // и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
+    public static String arrParam (int[]arr) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        double avg = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            } if (arr[i] > max) {
+                max = arr[i];
+            }
+            avg = avg + (arr[i]*1.0)/arr.length;
+        }
+        return ("min = " + min + ", max = " + max + ", avg = " + Math.round(avg));
+
+    }
+
     public static void main(String[] args) {
         //1 Создать массив catsNames, заполнить его любыми значениями (см картинку котов из презентации).
         task();
@@ -227,7 +245,7 @@ public class HW7 {
 
         //20. Массив из 10 случайных положительных целых чисел
         task();
-int d;
+        int d;
         int[] arr4 = new int[10];
         for (int i = 0 ; i < arr4.length;) {
                 d= (int)(Math.random()*Short.MAX_VALUE);
@@ -241,5 +259,8 @@ int d;
             System.out.println(arr4[i]);
         }
 
+        //21 Создать метод, который принимает на вход массив int,  и возвращает минимальное значение, максимальное
+        // значение и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
+        System.out.println(arrParam(arr4));
     }
 }
