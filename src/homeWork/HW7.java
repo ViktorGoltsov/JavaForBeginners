@@ -262,5 +262,46 @@ public class HW7 {
         //21 Создать метод, который принимает на вход массив int,  и возвращает минимальное значение, максимальное
         // значение и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
         System.out.println(arrParam(arr4));
+
+
+        //22 Создать массив четных чисел и массив нечетных чисел из элементов массива из задания 20
+
+        int jj = 0;
+        int kk = 0;
+
+        for (int i = 0; i < arr4.length; i++) {
+            if (arr4[i] % 2 == 0) {
+               jj++;
+            } else {
+               kk++;
+            }
+        }
+
+        int[] arrOdd = new int[kk];
+        int[] arrEven = new int[jj];
+        jj = 0;
+        kk = 0;
+        for (int i = 0; i < arr4.length; i++) {
+            if (arr4[i] % 2 == 0) {
+                arrEven[jj] = arr4[i];
+                jj++;
+            } else {
+                arrOdd[kk] = arr4[i];
+                kk++;
+            }
+        }
+
+        for (int i = 0; i < arrOdd.length; i++) {
+            System.out.println(arrOdd[i]);
+        }
+        System.out.println();
+        for (int i = 0; i < arrEven.length; i++) {
+            System.out.println(arrEven[i]);
+        }
+
+        // Создать двумерный массив, который состоит из имен, возрастов и цветов котов
+
+
+
     }
 }
