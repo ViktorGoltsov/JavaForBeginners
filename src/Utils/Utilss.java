@@ -62,6 +62,40 @@ public class Utilss {
         System.out.println("A");
     }
 
+    public static void arrayToPrint (double[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[array.length-1]);
+        System.out.println("]");
+    }
 
+    public static void arrayToPrint (String[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[array.length-1]);
+        System.out.println("]");
+    }
+
+    public static void arrayToPrint (int[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[array.length - 1]);
+        System.out.println("]");
+    }
+
+    public static void arrayToPrint (boolean[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[array.length - 1]);
+        System.out.println("]");
+    }
 
 }
