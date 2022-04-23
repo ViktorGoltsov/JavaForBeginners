@@ -3,7 +3,7 @@ package Utils;
 public class Utilss {
     // в этот класс складываем только переменные или методы
     public static void line () {
-        System.out.println("______________________");
+        System.out.println("_____________________________________________________________");
     }
 
     public static void ln () {
@@ -15,6 +15,13 @@ public class Utilss {
     public static void task() {
         System.out.println("_____________________________________________________");
         System.out.println("                      Task " + i);
+        System.out.println("-----------------------------------------------------");
+        i++;
+    }
+
+    public static void task(int n) {
+        System.out.println("_____________________________________________________");
+        System.out.println("                      Task " + n);
         System.out.println("-----------------------------------------------------");
         i++;
     }
