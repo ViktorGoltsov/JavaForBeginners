@@ -1,5 +1,6 @@
 package HW8;
 
+import javax.sound.midi.Soundbank;
 import java.util.Arrays;
 
 import static HW8.HW8_1.*;
@@ -231,10 +232,17 @@ public class HW8 {
                 } else {
                     System.out.println("Введен член массива <=0 - provide 'массив целых положительных двузначных чисел'");
                     break;
+
                 }
             }
+
             return arrDelta;
             }
+
+
+
+
+
 
     public static void main(String[] args) {
         task(5);
@@ -328,6 +336,11 @@ public class HW8 {
         arrayToPrint(deltaBetweenTensAndOnes(randomArrWithlengthAndNumOfDigit(5, 2)));
         arrayToPrint(deltaBetweenTensAndOnes(randomArrWithlengthAndNumOfDigit(0, 2)));
         arrayToPrint(deltaBetweenTensAndOnes(new int[] {50,-2, 45, 52, 87}));
+
+        int[] numbers = new int[]{2, 5, 7, 4, 88, 7};
+        Arrays.sort(numbers);
+        arrayToPrint(numbers);
+
 
     }
 }
