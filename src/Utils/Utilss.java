@@ -1,17 +1,20 @@
 package Utils;
 
+import java.util.Arrays;
+
 public class Utilss {
     // в этот класс складываем только переменные или методы
-    public static void line () {
+    public static void line() {
         System.out.println("_____________________________________________________________");
     }
 
-    public static void ln () {
+    public static void ln() {
         System.out.println("____________________  __");
     }
 
 
     public static int i = 1;
+
     public static void task() {
         System.out.println("_____________________________________________________");
         System.out.println("                      Task " + i);
@@ -58,44 +61,62 @@ public class Utilss {
         }
     }
 
-    public void printA () {
+    public void printA() {
         System.out.println("A");
     }
 
-    public static void arrayToPrint (double[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length-1; i++) {
-            System.out.print(array[i] + ", ");
+    public static void arrayToPrint(double[] array) {
+        if (array.length == 0) {
+            System.out.println(Arrays.toString(array));
+        } else {
+
+            System.out.print("[");
+            for (int i = 0; i < array.length - 1; i++) {
+                System.out.print(array[i] + ", ");
+            }
+            System.out.print(array[array.length - 1]);
+            System.out.println("]");
         }
-        System.out.print(array[array.length-1]);
-        System.out.println("]");
     }
 
-    public static void arrayToPrint (String[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length-1; i++) {
-            System.out.print(array[i] + ", ");
+    public static void arrayToPrint(String[] array) {
+        if (array.length == 0) {
+            System.out.println(Arrays.toString(array));
+        } else {
+            System.out.print("[");
+            for (int i = 0; i < array.length - 1; i++) {
+                System.out.print(array[i] + ", ");
+            }
+            System.out.print(array[array.length - 1]);
+            System.out.println("]");
         }
-        System.out.print(array[array.length-1]);
-        System.out.println("]");
     }
 
-    public static void arrayToPrint (int[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length - 1; i++) {
-            System.out.print(array[i] + ", ");
+    public static void arrayToPrint(int[] array) {
+        if (array.length == 0) {
+            System.out.println(Arrays.toString(array));
+        } else {
+            System.out.print("[");
+            for (int i = 0; i < array.length - 1; i++) {
+                System.out.print(array[i] + ", ");
+            }
+            System.out.print(array[array.length - 1]);
+            System.out.println("]");
         }
-        System.out.print(array[array.length - 1]);
-        System.out.println("]");
     }
 
-    public static void arrayToPrint (boolean[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length - 1; i++) {
-            System.out.print(array[i] + ", ");
+    public static void arrayToPrint(boolean[] array) {
+        if (array.length == 0) {
+            System.out.println(Arrays.toString(array));
+        } else {
+
+            System.out.print("[");
+            for (int i = 0; i < array.length - 1; i++) {
+                System.out.print(array[i] + ", ");
+            }
+            System.out.print(array[array.length - 1]);
+            System.out.println("]");
         }
-        System.out.print(array[array.length - 1]);
-        System.out.println("]");
     }
 
 }

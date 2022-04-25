@@ -129,14 +129,112 @@ public class HW8 {
         return tablUmn;
     }
 
-    //17.
-//    public static int[] arrayOddOrEvenWichLarger (int [] array) {
-//        int []arrNull = {};
-//        int [] arrayOddOrEven = new int[array.length];
-//        for ()
-//
-//    }
+    //17.Написать метод, который принимает массив целых чисел и возвращает массив четных чисел, если четных чисел
+    // больше, или массив нечетных чисел, если нечетных чисел больше. Если по ровну, то возвращает пустой массив.
+    public static int[] arrayOddOrEvenWichLarger (int [] array) {
+        int []arrNull = {};
 
+        int amountOfOdd = 0;
+        int amountOfEven = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                amountOfEven++;
+            } else {
+                amountOfOdd++;
+            }
+        }
+        if (amountOfEven > amountOfOdd) {
+            int [] arrayEven = new int[amountOfEven];
+            int evenCount = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    arrayEven[evenCount] = array[i];
+                    evenCount++;
+                }
+            }
+            return arrayEven;
+
+        } else if (amountOfEven < amountOfOdd) {
+            int [] arrayOdd = new int[amountOfOdd];
+            int oddCount = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 != 0) {
+                    arrayOdd[oddCount] = array[i];
+                    oddCount++;
+                }
+            }
+            return arrayOdd;
+    } else {
+        return arrNull;
+        }
+    }
+
+    //18 Написать метод, который принимает на вход длину массива и генерирует массив случайных положительных чисел
+    // от 0 до 100 исключительно.
+    public static int[] randomArrWithlength (int length) {
+        int [] randomArr = new int[length];
+        for (int i = 0 ; i < length; i++) {
+            randomArr[i] = Math.abs((int)(Math.random()*100));
+        }
+
+        return randomArr;
+    }
+
+    //19 // Написать метод, который принимает на вход длину массива l и количество знаков d (однозначные,
+    //        // двузначные, трехзначные и тд числа), и генерирует массив случайных целых положительных чисел длины l,
+    //        // в котором все числа имеют количество знаков d
+    public static int[] randomArrWithlengthAndNumOfDigit (int length, int numOfDigit) {
+        if (length <= 0 || numOfDigit <= 0) {
+            return (new int[]{});
+        }
+        int [] randomArr = new int[length];
+        for (int i = 0 ; i < length; i++) {
+
+            while (randomArr[i] % Math.pow(10, numOfDigit) < Math.pow(10,numOfDigit-1)) {
+                randomArr[i] = Math.abs((int)(Math.random()*Math.pow(10,numOfDigit)));
+            }
+        }
+
+        return randomArr;
+    }
+
+    // 20. Написать метод, который принимает на вход массив целых положительных чисел, и возвращает массив
+    // только двузначных чисел. Пhоверить работу метода на массиве из задания 18.
+    public static int[] arrTwoDigitNum (int[] array) {
+        int newArrLength = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= 10 && array[i] <= 99) {
+                newArrLength++;
+            }
+        }
+        int[] twoDigitArr = new int[newArrLength];
+        int newArrInd = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= 10 && array[i] <= 99) {
+                twoDigitArr[newArrInd] = array[i];
+                newArrInd++;
+            }
+        }
+        return twoDigitArr;
+    }
+
+    //21. Написать метод, который принимает на вход массив целых положительных двузначных чисел, и возвращает
+    // массив разниц между десятками и единицами
+    public static int[] deltaBetweenTensAndOnes(int [] array) {
+
+            System.out.println(Arrays.toString(array));
+
+            int[] arrDelta = new int[array.length];
+            for (int i = 0; i < array.length; i++) {
+                if ((array[i] >= 10) && (array[i] <= 99)) {
+                    arrDelta[i] = Math.abs((int) (array[i] / 10) - array[i] % 10);
+                } else {
+                    System.out.println("Введен член массива <=0 - provide 'массив целых положительных двузначных чисел'");
+                    break;
+                }
+            }
+            return arrDelta;
+            }
 
     public static void main(String[] args) {
         task(5);
@@ -199,5 +297,37 @@ public class HW8 {
         // исключительно, и возвращает таблицу умножения на это число в виде массива
         //Например, метод(2) -> {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
         arrayToPrint(tabMultip(9));
+
+        task(17); //Написать метод, который принимает массив целых чисел и возвращает массив четных чисел, если
+        // четных чисел больше, или массив нечетных чисел, если нечетных чисел больше.
+        arrayToPrint(arrayOddOrEvenWichLarger(new int []{1,2,3,4,5,6,7,8,11,6}));
+
+        task(18); //Написать метод, который принимает на вход длину массива и генерирует массив случайных
+        // положительных чисел от 0 до 100 исключительно.
+        arrayToPrint(randomArrWithlength(5));
+
+        task(19); // Написать метод, который принимает на вход длину массива l и количество знаков d (однозначные,
+        // двузначные, трехзначные и тд числа), и генерирует массив случайных целых положительных чисел длины l,
+        // в котором все числа имеют количество знаков d
+      arrayToPrint(randomArrWithlengthAndNumOfDigit(1, 1));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(5, 3));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(0, 0));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(1, 0));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(0, 1));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(-1, -1));
+
+        task(20);// Написать метод, который принимает на вход массив целых положительных чисел, и возвращает массив
+        // только двузначных чисел. ПРоверить работу метода на массиве из задания 18.
+        arrayToPrint(arrTwoDigitNum(new int[]{1, 99, 150, 1234}));
+        arrayToPrint(arrTwoDigitNum(new int[]{0, 99, 150, 1, 1234}));
+        arrayToPrint(arrTwoDigitNum(new int[]{-1, 99, 150, 1, 1234}));
+        arrayToPrint(arrTwoDigitNum(randomArrWithlength(10)));
+
+        task(21);//Написать метод, который принимает на вход массив целых положительных двузначных чисел, и
+        // возвращает массив разниц между десятками и единицами
+        arrayToPrint(deltaBetweenTensAndOnes(randomArrWithlengthAndNumOfDigit(5, 2)));
+        arrayToPrint(deltaBetweenTensAndOnes(randomArrWithlengthAndNumOfDigit(0, 2)));
+        arrayToPrint(deltaBetweenTensAndOnes(new int[] {50,-2, 45, 52, 87}));
+
     }
 }
