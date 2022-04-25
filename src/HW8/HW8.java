@@ -106,7 +106,14 @@ public class HW8 {
   //метод arrayToPrint ранее написан в Utils
 
     //15. Написать метод, который принимает массив целых чисел и считает сумму чисел во второй половине массива
+    public static int sumSecondHalfOfArray (int[]array) {
+        int sum = 0;
+        for (int i = (int)array.length/2; i < array.length; i++) {
+            sum +=array[i];
+        }
 
+        return sum;
+    }
 
     public static void main(String[] args) {
         task(5);
@@ -163,6 +170,9 @@ public class HW8 {
         arrayToPrint(new String[]{"one","two", "three"});
 
         task(15); //Написать метод, который принимает массив целых чисел и считает сумму чисел во второй половине массива
+        System.out.println(sumSecondHalfOfArray(new int[]{1,2,3,-2,-6}));
 
+        task(16); //Написать метод, который принимает на вход целое положительные число в пределах от 1 до 10 исключительно, и возвращает таблицу умножения на это число в виде массива
+        //Например, метод(2) -> {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
     }
 }
