@@ -52,10 +52,61 @@ public class HW8 {
     //11. Написать метод, который принимает на вход массив целых положительных чисел, и возвращает количество четных
     // чисел в этом массиве
 
-   // public static int[] arrAmountOfEven (int [] array) {
+    public static int arrAmountOfEven (int [] array) {
+        int amountOfEven = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] <= 0) {
+                System.out.println("Введен член массива <=0");
+                amountOfEven = 0;
+                break;
+            } else if (array[i] % 2 == 0) {
+                amountOfEven++;
+            }
+        }
+        return amountOfEven;
+    }
 
-     //   return ;
-    //}
+    //12. Написать метод, который принимает на вход массив целых положительных чисел, и возвращает количество нечетных
+    // чисел в этом массиве
+
+    public static int arrAmountOfOdd (int [] array) {
+        int amountOfOdd = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                amountOfOdd++;
+            }  else if (array[i] == 0) {
+                System.out.println("Введен член массива <=0");
+                amountOfOdd = 0;
+                break;
+            }
+        }
+        return amountOfOdd;
+    }
+
+    //13 Написать метод, который принимает на вход массив целых чисел,  и возвращает массив значений true
+    //   или false, если числа больше 10
+
+    public static boolean[] ifNumbersMoreThenTenMeth (int [] array) {
+        boolean[] ifNumbersMoreThenTen = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 10) {
+                ifNumbersMoreThenTen[i] = true;
+            } else if (array[i] <= 0) {
+                System.out.println("Введен член массива <=0");
+               // ifNumbersMoreThenTen[i] = false;
+                break;
+            } else {
+                ifNumbersMoreThenTen[i] = false;
+            }
+        }
+        return ifNumbersMoreThenTen;
+    }
+
+    //14. Написать метод, который принимает на вход массив слов,  и возвращает строку, состоящую из этих слов
+  //метод arrayToPrint ранее написан в Utils
+
+    //15. Написать метод, который принимает массив целых чисел и считает сумму чисел во второй половине массива
+
 
     public static void main(String[] args) {
         task(5);
@@ -93,9 +144,25 @@ public class HW8 {
         // умноженных на 2.5
         arrDoubl( new int[] {4,8,56,3,4,56});
 
+        task(11); //Написать метод, который принимает на вход массив целых положительных чисел,  и возвращает
+        // количество четных чисел в этом массиве
+        System.out.println(arrAmountOfEven(new int[] {1,2,3,4,5,6}));
+        System.out.println(arrAmountOfEven(new int[] {-1,2,3,4,5,6}));
+        System.out.println(arrAmountOfEven(new int[] {0,2,3,4,5,6}));
+        verifyEquals(3, arrAmountOfEven(new int[] {2,3,4,5,6}));
 
+        task(12); //Написать метод, который принимает на вход массив целых положительных чисел,  и возвращает
+        // массив нечетных чисел
+        System.out.println(arrAmountOfOdd(new int[] {1,3,7,8}));
 
+        task(13); //Написать метод, который принимает на вход массив целых чисел,  и возвращает массив значений true
+        // или false, если числа больше 10
+        arrayToPrint(ifNumbersMoreThenTenMeth(new int[]{12,17,10,-1}));
 
+        task(14); //Написать метод, который принимает на вход массив слов,  и возвращает строку, состоящую из этих слов
+        arrayToPrint(new String[]{"one","two", "three"});
+
+        task(15); //Написать метод, который принимает массив целых чисел и считает сумму чисел во второй половине массива
 
     }
 }
