@@ -115,6 +115,29 @@ public class HW8 {
         return sum;
     }
 
+    //16.
+    public static int[] tabMultip (int a) {
+        int [] tablUmn = new int[11];
+        if (a > 0 && a < 10) {
+            for (int i = 0; i < 11; i++) {
+                tablUmn[i] = a * i;
+            }
+        } else {
+            System.out.println("Введено число за пределами интервала [1; 10)");
+        }
+
+        return tablUmn;
+    }
+
+    //17.
+//    public static int[] arrayOddOrEvenWichLarger (int [] array) {
+//        int []arrNull = {};
+//        int [] arrayOddOrEven = new int[array.length];
+//        for ()
+//
+//    }
+
+
     public static void main(String[] args) {
         task(5);
         Integer newIntObj = 5;
@@ -172,7 +195,9 @@ public class HW8 {
         task(15); //Написать метод, который принимает массив целых чисел и считает сумму чисел во второй половине массива
         System.out.println(sumSecondHalfOfArray(new int[]{1,2,3,-2,-6}));
 
-        task(16); //Написать метод, который принимает на вход целое положительные число в пределах от 1 до 10 исключительно, и возвращает таблицу умножения на это число в виде массива
+        task(16); //Написать метод, который принимает на вход целое положительные число в пределах от 1 до 10
+        // исключительно, и возвращает таблицу умножения на это число в виде массива
         //Например, метод(2) -> {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+        arrayToPrint(tabMultip(9));
     }
 }
