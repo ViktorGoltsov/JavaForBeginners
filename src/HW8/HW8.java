@@ -238,11 +238,28 @@ public class HW8 {
 
             return arrDelta;
             }
-
-
-
-
-
+    //22   Написать метод, который принимает массив из 11 целых положительных чисел от 0 до 9, и возвращает массив,
+    // который содержит номер телефона, состоящий из этих чисел,  и название страны, которой номер принадлежит.
+    ////        Например:
+    ////        method({1, 8, 0, 0, 1, 2, 3, 4, 5, 6, 7}) -> {“1(800)123-45-67”, “USA”}
+        public static String PhoneNumOfTheCountry (int[]array) {
+            String[] arrCounryICode = {"", "USA", "Kenya", "Spain", "Poland", "Argentina", "Indonesia", "RF", "Japan", "India"};
+            String country = "";
+            if (array.length != 11) {
+                return ("Введен некорректный номер, проверьте номер и убедитесь, что общее количество цифр в нём равно 11");
+            } else {
+                for (int i = 0; i < arrCounryICode.length; i++) {
+                    if (array[0] == i) {
+                        country = arrCounryICode[i];
+                    }
+                }
+                if (country.equalsIgnoreCase("")) {
+                    country = "введен некорректный номер, - укажите действующий код страны";
+                }
+                return ("“+" + array[0] + "(" + array[1] + array[2] + array[3] + ")" + array[4] + array[5] + array[6] + "-"
+                        + array[7] + array[8] + "-" + array[9] + array[10] + "“, " + country);
+            }
+        }
 
     public static void main(String[] args) {
         task(5);
@@ -341,6 +358,11 @@ public class HW8 {
         Arrays.sort(numbers);
         arrayToPrint(numbers);
 
-
+        task(22);
+//        Написать метод, который принимает массив из 11 целых положительных чисел от 0 до 9, и возвращает массив,
+//        который содержит номер телефона, состоящий из этих чисел,  и название страны, которой номер принадлежит.
+//        Например:
+//        method({1, 8, 0, 0, 1, 2, 3, 4, 5, 6, 7}) -> {“1(800)123-45-67”, “USA”}
+        System.out.println((PhoneNumOfTheCountry(new int [] {1,9,1,4,9,3,9,9,9,3,7})));
     }
 }
