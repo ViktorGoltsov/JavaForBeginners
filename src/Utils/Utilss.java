@@ -119,4 +119,37 @@ public class Utilss {
         }
     }
 
+    public static int[] checkzwro (int[] arr) {
+        if (arr.length == 0) {
+            return (new int []{});
+        } else {
+            return arr;
+        }
+    }
+
+    public static String[] checkzwro (String[] arr) {
+        if (arr.length == 0) {
+            return (new String[] {});
+        } else {
+            return arr;
+        }
+    }
+
+    public static double[] checkzwro (double[] arr) {
+        if (arr.length == 0) {
+            return (new double[]{});
+        } else {
+            return arr;
+        }
+    }
+
+    public static boolean[] checkzwro (boolean[] arr) {
+        if (arr.length == 0) {
+            return (new boolean[]{});
+        } else {
+            return arr;
+        }
+    }
+
+
 }
