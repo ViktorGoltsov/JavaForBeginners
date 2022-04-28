@@ -9,7 +9,7 @@ import static Utils.Utilss.*;
 
 public class HW8 {
 
-    //7.
+    //7__.
     public static int[] arrNum(int a, int b, int c, int d, int e) {
         int[] arrNum = new int[5];
         arrNum[0] = a;
