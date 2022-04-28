@@ -247,6 +247,7 @@ public class HW8 {
     // который содержит номер телефона, состоящий из этих чисел,  и название страны, которой номер принадлежит.
     ////        Например:
     ////        method({1, 8, 0, 0, 1, 2, 3, 4, 5, 6, 7}) -> {“1(800)123-45-67”, “USA”}
+
     public static String PhoneNumOfTheCountry(int[] array) {
         String[] arrCounryICode = {"", "USA", "Kenya", "Spain", "Poland", "Argentina", "Indonesia", "RF", "Japan", "India"};
         String country = "";
