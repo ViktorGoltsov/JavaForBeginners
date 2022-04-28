@@ -239,7 +239,6 @@ public class HW8 {
 
             }
         }
-
         return arrDelta;
     }
 
