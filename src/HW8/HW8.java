@@ -480,7 +480,7 @@ public class HW8 {
         // двузначные, трехзначные и тд числа), и генерирует массив случайных целых положительных чисел длины l,
         // в котором все числа имеют количество знаков d
         arrayToPrint(randomArrWithlengthAndNumOfDigit(1, 1));
-        arrayToPrint(randomArrWithlengthAndNumOfDigit(5, 3));
+        arrayToPrint(randomArrWithlengthAndNumOfDigit(4, 2));
         arrayToPrint(randomArrWithlengthAndNumOfDigit(0, 0));
         arrayToPrint(randomArrWithlengthAndNumOfDigit(1, 0));
         arrayToPrint(randomArrWithlengthAndNumOfDigit(0, 1));
