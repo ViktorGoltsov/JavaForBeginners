@@ -1,6 +1,8 @@
 package lessons.lesson10;
 
+import javax.sound.midi.Soundbank;
 import java.util.Arrays;
+import java.util.Locale;
 
 import static Utils.Utilss.line;
 
@@ -69,9 +71,15 @@ public class Lesson10 {
         System.out.println(arrStr[0].equals (arrayChar[0]));
         System.out.println(arrStr[0].compareTo(Character.toString(arrayChar[0]))); //верный метод для сравнения символов
         // в массивах char  и String //0 - означает,что они равны. -1 - <  +1 - >
-        if (arrStr[0].compareTo(Character.toString(arrayChar[0])) == 0) {
 
-        }
+        System.out.println(str4);
+        System.out.println(str4.toLowerCase()); //into lower case
+        System.out.println(str4.toUpperCase()); // into Capital
+        //to use while working with Strings
+
+        String str5 = str4.toUpperCase();
+        System.out.println(str4.compareToIgnoreCase(str5)); // compareToIgnoreCase: 0=, 1>, 2<
+        //to use when to compare logic of expression
 
     }
 }
