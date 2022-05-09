@@ -148,7 +148,7 @@ public class HW10 {
         //8
         System.out.println(reNameCity("ташкент"));
         System.out.println(reNameCity("ЧикаГО"));
-
+        System.out.println(reNameCity("ЧикаГО"));
 
     }
 }
