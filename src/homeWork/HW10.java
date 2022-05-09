@@ -11,8 +11,8 @@ public class HW10 {
         } else if (str.equals(str.trim())) {
             System.out.println("Пробелов не было");
         } else {
-            str.trim();
-            System.out.println("Лишние пробелы удалены");
+            str = str.trim();
+            System.out.println("Лишние пробелы удалены:\n" + str);
         }
     }
 
@@ -94,6 +94,28 @@ public class HW10 {
         return str;
 }
 
+    //9 Напишите метод, который принимает на вход строку, и возвращает все, что находится между первой и последней
+    // буквой-параметром:
+
+    public static String returnSubString(String str, char a) {
+        str = str.toLowerCase();
+        str = str.substring(str.indexOf(a), str.lastIndexOf(a)+1);
+
+        return str;
+    }
+
+    //10 Напишите метод, который принимает на вход слово, и возвращает true, если слово начинается и заканчивается
+    // на одинаковую букву, и faulse иначе
+
+    public static boolean theSameLatterStartsAndEnds (String str) {
+        str = str.toLowerCase();
+        if (str.charAt(0) == str.charAt(str.length()-1)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -148,7 +170,14 @@ public class HW10 {
         //8
         System.out.println(reNameCity("ташкент"));
         System.out.println(reNameCity("ЧикаГО"));
-        System.out.println(reNameCity("ЧикаГО"));
+
+        //9
+        System.out.println(returnSubString("Abracadabra", 'b'));
+        System.out.println(returnSubString("Whippersnapper", 'p'));
+
+        //10
+        System.out.println(theSameLatterStartsAndEnds("Abracadabra"));
+        System.out.println(theSameLatterStartsAndEnds("Whippersnapper"));
 
     }
 }
