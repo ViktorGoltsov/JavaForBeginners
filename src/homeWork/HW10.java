@@ -1,6 +1,7 @@
 package homeWork;
 
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class HW10 {
@@ -116,6 +117,47 @@ public class HW10 {
         }
     }
 
+    //11 Напишите метод, который принимает на вход предложение и возвращает слова из этого предложения в виде массива слов
+    public static String[] splitStringToArrOfStrings (String str) {
+        String [] arrayOfSplit = str.split(" ");
+
+        return arrayOfSplit;
+    }
+
+    //12 Написать метод, который принимает на вход предложение, которое состоит из имени, фамилии, отчества и возвращает массив строк:
+    public static String[] splitFullNameToArrOfStrings (String str) {
+        String [] arrayOfSplit = str.split(" ");
+        arrayOfSplit[0] =  "Имя: " + arrayOfSplit[0];
+        arrayOfSplit[1] = "Отчество: " + arrayOfSplit[1];
+        arrayOfSplit[2] = "Фамилия: " + arrayOfSplit[2];
+
+        return arrayOfSplit;
+    }
+
+    //13 Написать метод, который возвращает сумму всех букв слова
+
+    public static int sumOfCharsInWord (String str) {
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (((int)str.charAt(i) >= 65 && (int)str.charAt(i) <= 90)
+                    || ((int)str.charAt(i) >= 97 && (int)str.charAt(i) <= 122)) {
+                sum += str.charAt(i);
+            } else {
+                break;
+                }
+            }
+        return sum;
+        }
+
+        //14 Написать метод,  который принимает на вход 2 буквы и возвращает true, если первая буква встречается
+    // раньше второй, иначе метод возвращает false
+        public static boolean ifFirstLetterEarlierThenSecond (char letter1, char letter2) {
+        if (letter1 < letter2) {
+            return true;
+        } else {
+            return false;
+        }
+}
 
     public static void main(String[] args) {
 
@@ -179,5 +221,20 @@ public class HW10 {
         System.out.println(theSameLatterStartsAndEnds("Abracadabra"));
         System.out.println(theSameLatterStartsAndEnds("Whippersnapper"));
 
+        //11
+        System.out.println(Arrays.toString(splitStringToArrOfStrings("QA for Everyone")));
+        System.out.println(Arrays.toString(splitStringToArrOfStrings("Александр Сергеевич Пушкин")));
+
+        //12
+        System.out.println(Arrays.toString(splitFullNameToArrOfStrings("Александр Сергеевич Пушкин")));
+
+        //13
+        System.out.println(sumOfCharsInWord("abc"));
+        System.out.println(sumOfCharsInWord("ABC"));
+        System.out.println(sumOfCharsInWord("123"));
+
+        //14
+        System.out.println(ifFirstLetterEarlierThenSecond('a', 'b'));
+        System.out.println(ifFirstLetterEarlierThenSecond('B', 'A'));
     }
 }
